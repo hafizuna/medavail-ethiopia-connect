@@ -42,35 +42,35 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
+        <div className="mx-auto mb-16 max-w-2xl text-center">
           <h2 className="mb-4 font-heading text-3xl font-bold tracking-tight sm:text-4xl">
             Your Ultimate Pharmaceutical Companion
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base text-muted-foreground">
             Comprehensive solutions for all your healthcare supply needs
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Card
+              <div
                 key={index}
-                className="group cursor-pointer border-border p-6 transition-all hover:shadow-lg"
+                className="group text-center"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary">
-                  <Icon className="h-6 w-6 text-primary transition-colors group-hover:text-primary-foreground" />
+                <div className="mb-4 flex h-16 w-16 mx-auto items-center justify-center rounded-full bg-background border-2 border-border transition-all group-hover:border-primary group-hover:bg-primary/5">
+                  <Icon className="h-7 w-7 text-foreground transition-colors group-hover:text-primary" />
                 </div>
-                <h3 className="mb-2 font-heading text-xl font-semibold">
+                <h3 className="mb-3 font-heading text-lg font-semibold">
                   {service.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
-              </Card>
+              </div>
             );
           })}
         </div>
